@@ -16,6 +16,8 @@
 		<li>
 			<packageId>thesePeople.RitualAttachableOutcomes</packageId>
 			<displayName>Custom Ritual Framework</displayName>
+			<steamWorkshopUrl>steam://url/CommunityFilePage/2561617361</steamWorkshopUrl>
+			<downloadUrl>https://github.com/thesePeople/CustomRitualFramework</downloadUrl>
 		</li>
 	</modDependencies>
 	<loadAfter>
