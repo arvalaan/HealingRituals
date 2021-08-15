@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Healing Rituals</name>
+	<author>Nin</author>
+	<url></url>
+	<supportedVersions>
+		<li>1.3</li>
+	</supportedVersions>
+	<packageId>arvalaan.HealingRituals</packageId>
+	<description>This mod allows you to perform rituals that would heal the scars and or limbs from your colonists. Bad rituals could however be the death of the one you're trying to heal... tread carefully!</description>
+	<modDependencies>
+		<li>
+			<packageId>Ludeon.RimWorld.Ideology</packageId>
+			<displayName>Ideology</displayName>
+		</li>
+		<li>
+			<packageId>thesePeople.RitualAttachableOutcomes</packageId>
+			<displayName>Custom Ritual Framework</displayName>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>Ludeon.RimWorld.Ideology</li>
+		<li>thesePeople.RitualAttachableOutcomes</li>
+	</loadAfter>
+</ModMetaData>

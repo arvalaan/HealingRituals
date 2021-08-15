@@ -1,0 +1,10 @@
+C:\Users\Mike\Downloads\2460833332\Assemblies\ARV_HealingRituals.dll
+C:\Users\Mike\Downloads\2460833332\Source\ARV_HealingRituals\obj\Debug\ARV_HealingRituals.csproj.CoreCompileInputs.cache
+C:\Users\Mike\Downloads\2460833332\Source\ARV_HealingRituals\obj\Debug\ARV_HealingRituals.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\2460833332\Assemblies\ARV_HealingRituals.dll
+D:\SteamLibrary\steamapps\common\RimWorld\Mods\ARV_HealingRituals\Assemblies\ARV_HealingRituals.dll
+D:\Steam\steamapps\common\RimWorld\Mods\Healing Rituals\Source\ARV_HealingRituals\obj\Debug\ARV_HealingRituals.csproj.AssemblyReference.cache
+D:\Steam\steamapps\common\RimWorld\Mods\Healing Rituals\Source\ARV_HealingRituals\obj\Debug\ARV_HealingRituals.csproj.CoreCompileInputs.cache
+D:\Steam\steamapps\common\RimWorld\Mods\Healing Rituals\Source\ARV_HealingRituals\obj\Debug\ARV_HealingRituals.csproj.CopyComplete
+D:\Steam\steamapps\common\RimWorld\Mods\Healing Rituals\Source\ARV_HealingRituals\obj\Debug\ARV_HealingRituals.dll
+D:\Steam\steamapps\common\RimWorld\Mods\Healing Rituals\Assemblies\ARV_HealingRituals.dll

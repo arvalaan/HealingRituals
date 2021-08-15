@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <HediffDef>
+    <defName>ARV_HealingRituals_HealScars</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Rejuvenated</label>
+    <description>My body is renewing itself, it's painful but worth it</description>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painOffset>0.3</painOffset>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+        <disappearsAfterTicks>120000~180000</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li>
+        <compClass>ARV_HealingRituals.HediffComp_HealScars</compClass>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>ARV_HealingRituals_HealBodyParts</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>Reborn</label>
+    <description>My body is being reborn, my faith guides me through this pain.</description>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <painOffset>0.6</painOffset>
+        <statOffsets>
+          <PainShockThreshold>0.45</PainShockThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+    <comps>
+      <li Class="HediffCompProperties_Disappears">
+        <showRemainingTime>True</showRemainingTime>
+        <disappearsAfterTicks>720000</disappearsAfterTicks>
+      </li>
+      <li Class="HediffCompProperties_DisappearsOnDeath" />
+      <li>
+        <compClass>ARV_HealingRituals.HediffComp_HealBodyParts</compClass>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef ParentName="InjuryBase">
+    <defName>ARV_HealingRituals_Regrowing</defName>
+    <label>regrowing</label>
+    <labelNoun>a regrowing body part</labelNoun>
+    <description>Something is growing back...</description>
+    <comps>
+      <li Class="HediffCompProperties_GetsPermanent">
+        <permanentLabel>regrowing</permanentLabel>
+      </li>
+    </comps>
+    <injuryProps>
+      <averagePainPerSeverityPermanent>0.0</averagePainPerSeverityPermanent>
+      <bleedRate>0.0</bleedRate>
+      <canMerge>false</canMerge>
+      <destroyedLabel>Destroyed</destroyedLabel>
+    </injuryProps>
+  </HediffDef>
+</Defs>
