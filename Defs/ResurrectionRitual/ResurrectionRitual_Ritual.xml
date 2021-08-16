@@ -10,7 +10,7 @@
 		<iconPath>UI/Icons/Rituals/RitualFuneral</iconPath>
 		<preceptClass>Precept_Ritual</preceptClass>
 		<ritualPatternBase>ResurrectionRitual</ritualPatternBase>
-		<allowDuplicates>false</allowDuplicates>
+		<allowDuplicates>true</allowDuplicates>
 		<countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
 		<selectionWeight>1.0</selectionWeight>
 		<displayOrderInImpact>100</displayOrderInImpact>
@@ -22,6 +22,11 @@
 		<nameMaker>NamerRitualFuneral</nameMaker>
 		<ritualExpectedDesc>Once a {IDEO} member dies, other {MEMBERS} gather around their grave for {RITUAL_labelDef}.</ritualExpectedDesc>
 		<ritualExpectedPostfix>{0} {1} want to carry out the funeral as soon as possible.</ritualExpectedPostfix>
+		<ritualObligationTriggers>
+			<li Class="RitualObligationTrigger_MemberDiedProperties">
+				<mustBePlayerIdeo>true</mustBePlayerIdeo>
+			</li>
+		</ritualObligationTriggers>
 		<ritualObligationTargetFilter>GraveWithTargetsCorpse</ritualObligationTargetFilter>
 		<ritualBehavior>ResurrectionRitual</ritualBehavior>
 		<ritualOutcomeEffect>AttendedResurrectionRitual</ritualOutcomeEffect>
