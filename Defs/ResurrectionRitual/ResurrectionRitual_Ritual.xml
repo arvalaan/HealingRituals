@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<PreceptDef>
+		<defName>Resurrection</defName>
+		<label>resurrection</label>
+		<extraTextPawnDeathLetter>{PAWN_nameDef} should be brought back to life with dark, nearly blasphemous arts.</extraTextPawnDeathLetter>
+		<description>Tapping into untold necromantic powers, you revive a colonist's life</description>
+		<issue>Ritual</issue>
+		<impact>Medium</impact>
+		<iconPath>UI/Icons/Rituals/RitualFuneral</iconPath>
+		<preceptClass>Precept_Ritual</preceptClass>
+		<ritualPatternBase>ResurrectionRitual</ritualPatternBase>
+		<allowDuplicates>true</allowDuplicates>
+		<countsTowardsPreceptLimit>false</countsTowardsPreceptLimit>
+		<selectionWeight>1.0</selectionWeight>
+		<displayOrderInImpact>100</displayOrderInImpact>
+		<ignoreLimitsInEditMode>false</ignoreLimitsInEditMode>
+		<receivesExpectationsQualityOffset>true</receivesExpectationsQualityOffset>
+	</PreceptDef>
+	<RitualPatternDef>
+		<defName>ResurrectionRitual</defName>
+		<nameMaker>NamerRitualFuneral</nameMaker>
+		<ritualExpectedDesc>Once a {IDEO} member dies, other {MEMBERS} gather around their grave for {RITUAL_labelDef}.</ritualExpectedDesc>
+		<ritualExpectedPostfix>{0} {1} want to carry out the funeral as soon as possible.</ritualExpectedPostfix>
+		<ritualObligationTriggers>
+			<li Class="RitualObligationTrigger_MemberDiedProperties">
+				<mustBePlayerIdeo>true</mustBePlayerIdeo>
+			</li>
+		</ritualObligationTriggers>
+		<ritualObligationTargetFilter>GraveWithTargetsCorpse</ritualObligationTargetFilter>
+		<ritualBehavior>ResurrectionRitual</ritualBehavior>
+		<ritualOutcomeEffect>AttendedResurrectionRitual</ritualOutcomeEffect>
+	</RitualPatternDef>
+	<RitualBehaviorDef>
+		<defName>ResurrectionRitual</defName>
+		<durationTicks>5000</durationTicks>
+		<workerClass>RitualBehaviorWorker_Funeral</workerClass>
+		<roles>
+			<li Class="RitualRoleTag">
+				<label>speaker</label>
+				<id>moralist</id>
+				<precept>IdeoRole_Moralist</precept>
+				<tag>Moralist</tag>
+				<maxCount>1</maxCount>
+				<substitutable>true</substitutable>
+				<countsAsParticipant>False</countsAsParticipant>
+			</li>
+		</roles>
+		<stages>
+			<li>
+				<defaultDuty>Spectate</defaultDuty>
+				<endTriggers>
+					<li Class="StageEndTrigger_DurationPercentage">
+						<percentage>1</percentage>
+					</li>
+				</endTriggers>
+				<roleBehaviors>
+					<li>
+						<roleId>moralist</roleId>
+						<dutyDef>SpeakOnCellFuneral</dutyDef>
+						<speakerInteraction>Speech_Funeral</speakerInteraction>
+						<customPositions>
+							<li Class="RitualPosition_Lectern">
+								<maxDistanceToFocus>5</maxDistanceToFocus>
+							</li>
+							<li Class="RitualPosition_BesideThing"/>
+						</customPositions>
+					</li>
+				</roleBehaviors>
+				<visualEffectDef>Funeral</visualEffectDef>
+			</li>
+		</stages>
+	</RitualBehaviorDef>
+</Defs>

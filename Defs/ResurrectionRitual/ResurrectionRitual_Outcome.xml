@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+	<!-- Check if you like the text -->
+	<RitualOutcomeEffectDef>
+		<description>Depending on ritual quality, participants will get between {MINMOOD} and {MAXMOOD} mood for {MOODDAYS} days.</description>
+		<workerClass>TPRitualAttachableOutcomes.RitualOutcomeEffectWorker_FromQuality_TP_Custom</workerClass>
+		<allowAttachableOutcome>false</allowAttachableOutcome>
+		<outcomeChances>
+			<li>
+				<label>Terrible</label>
+				<chance>0.05</chance>
+				<memory>TerribleResurrection</memory>
+				<description>The {0} was a terrible! Everyone felt insulted for having had to endure it.</description>
+				<positivityIndex>-2</positivityIndex>
+			</li>
+			<li>
+				<label>Lackluster</label>
+				<chance>0.15</chance>
+				<memory>LacklusterResurrection</memory>
+				<description>The {0} was lackluster. The speech was long-winded and failed to resolve any emotions.</description>
+				<positivityIndex>-1</positivityIndex>
+			</li>
+			<li>
+				<label>Good</label>
+				<chance>0.6</chance>
+				<memory>GoodResurrection</memory>
+				<description>The {0} was good. The speaker's final words provided a path for everyone move on.</description>
+				<positivityIndex>1</positivityIndex>
+			</li>
+			<li>
+				<label>Heartwarming</label>
+				<chance>0.2</chance>
+				<memory>HeartwarmingResurrection</memory>
+				<description>The {0} was heartwarming. The speech was captivating and heartfelt, and everyone came away focused on good memories.</description>
+				<positivityIndex>2</positivityIndex>
+			</li>
+		</outcomeChances>
+		<modExtensions>
+			<li Class="TPRitualAttachableOutcomes.RitualAttachableOutcomeEffectDef_TP_Custom">
+				<addInnerPawn>true</addInnerPawn>
+				<resurrect>true</resurrect>
+			</li>
+		</modExtensions>
+		<defName>AttendedResurrectionRitual</defName>
+		<comps>
+			<li Class="RitualOutcomeComp_RolePresentNotSubstituted">
+				<roleId>moralist</roleId>
+				<label>moral guide present</label>
+				<qualityOffset>0.3</qualityOffset>
+			</li>
+			<li Class="RitualOutcomeComp_ParticipantCount">
+				<label>participant count</label>
+				<curve>
+					<points>
+						<li>(1, 0.0)</li>
+						<li>(5, 0.5)</li>
+						<li>(10, 0.7)</li>
+					</points>
+				</curve>
+			</li>
+		</comps>
+	</RitualOutcomeEffectDef>
+	<!-- Check if you like the text and moodeffect -->
+	<!--            Resurrection              -->
+	<ThoughtDef>
+		<defName>TerribleResurrection</defName>
+		<thoughtClass>Thought_AttendedRitual</thoughtClass>
+		<durationDays>6</durationDays>
+		<stackLimit>3</stackLimit>
+		<stages>
+			<li>
+				<label>disgraceful resurrection</label>
+				<description>That resurrection was disgraceful - the person didn't get resurrected at all.</description>
+				<baseMoodEffect>-3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>LacklusterResurrection</defName>
+		<thoughtClass>Thought_AttendedRitual</thoughtClass>
+		<durationDays>6</durationDays>
+		<stackLimit>3</stackLimit>
+		<stages>
+			<li>
+				<label>lackluster resurrection</label>
+				<description>That resurrection was lackluster - the person feels worse after the resurrection.</description>
+				<baseMoodEffect>-1</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>GoodResurrection</defName>
+		<thoughtClass>Thought_AttendedRitual</thoughtClass>
+		<durationDays>6</durationDays>
+		<stackLimit>3</stackLimit>
+		<stages>
+			<li>
+				<label>good resurrection</label>
+				<description>That resurrection went well - the person is happy to be alive.</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+	<ThoughtDef>
+		<defName>HeartwarmingResurrection</defName>
+		<thoughtClass>Thought_AttendedRitual</thoughtClass>
+		<durationDays>6</durationDays>
+		<stackLimit>3</stackLimit>
+		<stages>
+			<li>
+				<label>heartwarming resurrection</label>
+				<description>That resurrection went perfectly - the person feels even better after being resurrected.</description>
+				<baseMoodEffect>8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+</Defs>
