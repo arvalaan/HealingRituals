@@ -22,12 +22,13 @@
 		<nameMaker>NamerRitualFuneral</nameMaker>
 		<ritualExpectedDesc>Once a {IDEO} member dies, other {MEMBERS} gather around their grave for {RITUAL_labelDef}.</ritualExpectedDesc>
 		<ritualExpectedPostfix>{0} {1} want to carry out the funeral as soon as possible.</ritualExpectedPostfix>
+		<alwaysStartAnytime>true</alwaysStartAnytime>
 		<ritualObligationTriggers>
-			<li Class="RitualObligationTrigger_MemberDiedProperties">
+			<li Class="RitualObligationTrigger_DateProperties">
 				<mustBePlayerIdeo>true</mustBePlayerIdeo>
 			</li>
 		</ritualObligationTriggers>
-		<ritualObligationTargetFilter>GraveWithTargetsCorpse</ritualObligationTargetFilter>
+		<ritualObligationTargetFilter>ARV_Grave</ritualObligationTargetFilter>
 		<ritualBehavior>ResurrectionRitual</ritualBehavior>
 		<ritualOutcomeEffect>AttendedResurrectionRitual</ritualOutcomeEffect>
 	</RitualPatternDef>
@@ -71,4 +72,18 @@
 			</li>
 		</stages>
 	</RitualBehaviorDef>
+
+	
+	<RitualObligationTargetFilterDef>
+		<defName>ARV_Grave</defName>
+			<workerClass>TPRitualAttachableOutcomes.RitualObligationTargetWorker_CustomGrave</workerClass>
+		<modExtensions>
+			<li Class="TPRitualAttachableOutcomes.TargetFilter_ModExtension">
+				<extraCandidates>
+					<li>Grave</li>
+					<li>Sarcophagus</li>
+				</extraCandidates>
+			</li>
+		</modExtensions>
+	  </RitualObligationTargetFilterDef>
 </Defs>

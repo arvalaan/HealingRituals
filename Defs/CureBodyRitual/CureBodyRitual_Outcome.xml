@@ -134,6 +134,10 @@
                 <appliesTo>
                   <li>subject</li>
                 </appliesTo>
+                <hediffToAdd>
+                  <li>ARV_HealingRituals_HealBodyParts</li>
+                  <li>ARV_HealingRituals_HealScars</li>
+                </hediffToAdd>
               </li>
             </node>
           </li>
